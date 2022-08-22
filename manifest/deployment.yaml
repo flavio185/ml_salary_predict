@@ -22,11 +22,11 @@ spec:
           containerPort: 8080
           hostPort: 8080          
         livenessProbe:
-        httpGet:
-          path: /health
-          port: liveness-port
-        failureThreshold: 1
-        periodSeconds: 10
+          httpGet:
+            path: /health
+            port: liveness-port
+          failureThreshold: 1
+          periodSeconds: 10
         startupProbe:
           httpGet:
             path: /health
