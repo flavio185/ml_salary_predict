@@ -1,5 +1,6 @@
 yq e ".metadata.name = \"${APP}\""  - |
 yq e ".metadata.labels.name = \"${APP}\""  - |
+yq e ".metadata.labels.app = \"${APP}\""  - |
 yq e ".spec.selector.matchLabels.app = \"${APP}\""  - |
 yq e ".spec.template.metadata.labels.app = \"${APP}\""  - |
 yq e ".spec.template.spec.containers[].name = \"${APP}\""  - |
