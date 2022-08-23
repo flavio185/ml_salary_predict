@@ -1,6 +1,8 @@
-import predict 
 import uvicorn
 from fastapi import FastAPI, Request
+
+from . import predict 
+
 
 
 app = FastAPI()
