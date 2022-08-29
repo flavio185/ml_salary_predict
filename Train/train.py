@@ -14,7 +14,7 @@ from sklearn.preprocessing import OneHotEncoder
 
 def importDataSet():
   ssl._create_default_https_context = ssl._create_unverified_context
-  url = 'https://raw.githubusercontent.com/flavio185/MLEngineer/main/salary_case/ds_salaries.csv'
+  url = 'https://raw.githubusercontent.com/flavio185/ml-salary-predict/main/Train/ds_salaries.csv
   dataset = pd.read_csv(url)
   return dataset
 
