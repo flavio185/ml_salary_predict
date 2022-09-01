@@ -76,6 +76,7 @@ preds = model.predict(X_valid[:1])
 print(preds)
 dump(model, 'model.joblib') # save the model
 dump(enc, 'encoder.joblib') # save the encoder
+<<<<<<< HEAD
 
 
 
@@ -104,3 +105,5 @@ metrics = generateMetrics()
 # Writing to sample.json
 with open("metadata.json", "w") as outfile:
     outfile.write(metrics)
+=======
+>>>>>>> ef8a7a534b58c95fcd4c4f6b358dc4d87911a8b1
