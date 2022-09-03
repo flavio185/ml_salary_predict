@@ -6,6 +6,12 @@ from azureml.core import Experiment
 
 #
 import json
+from datetime import datetime
+
+# datetime object containing current date and time
+now = datetime.now()
+dt_string = now.strftime("%d%m%Y%H%M%S")
+
 
 def connectToAzureMLWorkspace():
     #Trocar os códigos abaixo pelos da sua instância!
@@ -35,8 +41,7 @@ def connectToAzureMLWorkspace():
 
 def startExperiment(ws, experiment_name):
     experiment = Experiment(workspace=ws, name=experiment_name)
-    run = experiment.start_logging(run_id=str(uuid.uuid1()),
-                            display_name="My Run " + str(uuid.uuid1()),
+    run = experiment.start_logging( display_name="My Run " + dt_string,
                             outputs="output",
                             snapshot_directory="output")
     return run
