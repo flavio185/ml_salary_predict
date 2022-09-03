@@ -16,6 +16,7 @@ import json
 from sklearn.model_selection import cross_val_score
 import sklearn
 import sys
+import os
 
 #create output dir
 os.path.join(os.getenv('PWD'), 'output')
