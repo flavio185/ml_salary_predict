@@ -1,6 +1,4 @@
 azure-core
 pandas
 sklearn
-json
 joblib
-ssl
