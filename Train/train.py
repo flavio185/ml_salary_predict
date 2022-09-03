@@ -17,6 +17,8 @@ from sklearn.model_selection import cross_val_score
 import sklearn
 import sys
 
+#create output dir
+os.path.join(os.getenv('PWD'), 'output')
 
 def importDataSet():
   ssl._create_default_https_context = ssl._create_unverified_context
