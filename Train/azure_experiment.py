@@ -3,6 +3,7 @@ from xml.etree.ElementTree import QName
 from azureml.core import Workspace
 from azureml.core.authentication import ServicePrincipalAuthentication
 from azureml.core import Experiment
+from azureml.core.model import Model
 
 #
 import json
@@ -54,11 +55,19 @@ def readMetadataJson(filename):
     data = json.load(f)
     return data
     
+def registerModel(ws, model_output_path, experiment_name):
+    Model.register(workspace=ws,
+                model_path=model_output_path,
+                model_name=experiment_name
+                )
 #Main
-metadata_json = readMetadataJson("output/metadata.json")
+model_output_path = os.path.join(os.getenv('PWD'), 'output')
+filename="output/metadata.json"
+metadata_json = readMetadataJson(filename)
 #
+experiment_name = "data_science_salary_predict"
 ws = connectToAzureMLWorkspace()
-my_experiment = startExperiment(ws, "data_science_salary_predict")
+my_experiment = startExperiment(ws, experiment_name)
 #log json into experiment.
 for key in metadata_json:   
     value = metadata_json[key]
@@ -67,7 +76,6 @@ for key in metadata_json:
 #Complete job.
 my_experiment.complete()
 
-    
-#json load
+registerModel(ws, model_output_path, experiment_name)
 
 
