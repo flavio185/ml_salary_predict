@@ -11,6 +11,12 @@ from sklearn.svm import SVR
 from sklearn.model_selection import train_test_split
 from sklearn.preprocessing import OneHotEncoder
 
+# For exporting model information.
+import json
+from sklearn.model_selection import cross_val_score
+import sklearn
+import sys
+
 
 def importDataSet():
   ssl._create_default_https_context = ssl._create_unverified_context
@@ -74,18 +80,8 @@ model = SVR(C = 1, gamma = 1, kernel = "poly")
 model.fit(X_train, y_train)
 preds = model.predict(X_valid[:1])
 print(preds)
-dump(model, 'model.joblib') # save the model
-dump(enc, 'encoder.joblib') # save the encoder
-<<<<<<< HEAD
-
-
-
-
-import json
-from sklearn.model_selection import cross_val_score
-
-import sklearn
-import sys
+dump(model, 'output/model.joblib') # save the model
+dump(enc, 'output/encoder.joblib') # save the encoder
 
 def validatingModel():
   scores = -1 * cross_val_score(model, X, y, scoring = "neg_mean_absolute_error", cv = 10)
@@ -93,17 +89,16 @@ def validatingModel():
 
 def generateMetrics():
   metadata = {
-      "python": sys.version,
-      "Versao sklearn": sklearn.__version__,      
-      "Model Name": type(model).__name__,
-      "Model info": model.get_params(),
-      "MEA": validatingModel(),
+    "Tipo": "Regressor",
+    "MEA": validatingModel(),
+    "python": sys.version.replace('\n', ''),
+    "Versao sklearn": sklearn.__version__,      
+    "Model Name": type(model).__name__,
+    "Model info": model.get_params()
   }
   return json.dumps( metadata )
 
 metrics = generateMetrics()
 # Writing to sample.json
-with open("metadata.json", "w") as outfile:
+with open("output/metadata.json", "w") as outfile:
     outfile.write(metrics)
-=======
->>>>>>> ef8a7a534b58c95fcd4c4f6b358dc4d87911a8b1
