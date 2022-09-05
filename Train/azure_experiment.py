@@ -79,7 +79,7 @@ class AzureModel:
                     model_name=self.model_name
                     )
 
-    def downloadModelArtifacts(self, model_name, **version):
+    def downloadModelArtifacts(self, model_name, version=None):
         self.version=version
         self.model_name = model_name
         self.model = Model(self.azml_workspace, name=self.model_name)
