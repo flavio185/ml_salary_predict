@@ -2,8 +2,8 @@ import joblib
 import numpy as np
 
 print("Carregando modelo")
-enc = joblib.load('/code/app/encoder.joblib')
-model = joblib.load('/code/app/model.joblib')
+enc = joblib.load('/code/app/output/encoder.joblib')
+model = joblib.load('/code/app/output/model.joblib')
 
 def predict(experience_level, employment_type, company_size, work_year, job_title, remote_ratio, employee_residence):
     #Aplicando encoder nos dados recebidos
