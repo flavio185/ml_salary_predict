@@ -10,8 +10,7 @@ from datetime import datetime
 
 
 class AzureModel:
-    def __init__(self, model_name):
-        self.model_name = model_name
+    def __init__(self):
         # datetime object containing current date and time
         self.now = datetime.now()
         self.dt_string = self.now.strftime("%d%m%Y%H%M%S")
@@ -45,7 +44,8 @@ class AzureModel:
         print("Found workspace {} at location {}".format(ws.name, ws.location))
         return ws
 
-    def startExperimentRun(self):
+    def startExperimentRun(self, model_name):
+        self.model_name = model_name
         #starta experimento no azureml
         #self.azml_workspace = azml_workspace
         #self.model_name = model_name
