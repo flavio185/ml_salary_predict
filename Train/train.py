@@ -19,7 +19,7 @@ import os
 
 #create output dir
 path = os.path.join(os.getenv('PWD'), 'output')
-os.mkdir(path,  exist_ok = True)
+os.makedirs(path,  exist_ok = True)
 
 
 def importDataSet():
