@@ -79,15 +79,11 @@ class AzureModel:
                     model_name=self.model_name
                     )
 
-    def downloadModelArtifacts(ws, model_name):
-        model = Model(ws, name=model_name)
-        model.download()
-
-
-#Main
-model_name = "data_science_salary_predict"
-m1 = AzureModel()
-m1.startExperimentRun(model_name)
-m1.logMetadataJson()
-m1.finishExperimentRun()
-m1.registerModelArtifacts()
+    def downloadModelArtifacts(self, model_name, **version):
+        self.version=version
+        self.model_name = model_name
+        self.model = Model(self.azml_workspace, name=self.model_name)
+        if self.version:
+            self.model.version = self.version
+        print(self.model.version)
+        self.model.download()
