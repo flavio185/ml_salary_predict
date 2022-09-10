@@ -30,3 +30,5 @@ Pipeline looks for Train/train.py for training and saving model in the Cloud.
 ## API
 
 API should have dockerize the model and make ready for deployment.
+
+API will download output folder from azure ML. Version of model can be passed as parameter. If no parameter, last model saved will be downloaded.
