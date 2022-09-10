@@ -14,6 +14,8 @@ output/encoder.joblib
 train.py should save metrics in metadata.json.
 output/metadata.json
 
+requirements.py - project dependencies. Training script will download this dependencies before training.
+
 ex.:
 
 ### For executing training and saving artifacts:
