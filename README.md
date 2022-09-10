@@ -27,3 +27,6 @@ Run ModelTrainAndSave Job passing this project git.
 Check model at AzureML data-masters-workspace workspace.
 Pipeline looks for Train/train.py for training and saving model in the Cloud.
 
+## API
+
+API should have dockerize the model and make ready for deployment.
