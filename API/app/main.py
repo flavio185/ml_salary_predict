@@ -7,9 +7,9 @@ from . import predict
 
 app = FastAPI()
 
-@app.get('/')
+@app.get('/api')
 async def index():
-  return {"text":"Our First route"}
+  return {"text":"Api is alive"}
 
 
 @app.post("/api")
