@@ -80,7 +80,7 @@ X_train, X_valid, y_train, y_valid = train_test_split(X, y, train_size = 0.8, te
 # Using SVR that has the lowest MAE
 svr = SVR()
 
-model = SVR(C = 1, gamma = 1, kernel = "poly")
+model = SVR(C = 1, gamma = 1, kernel = "linear")
 model.fit(X_train, y_train)
 preds = model.predict(X_valid[:1])
 print(preds)
