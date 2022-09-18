@@ -94,7 +94,7 @@ def validatingModel():
 def generateMetrics():
   metadata = {
     "Tipo": "Regressor",
-    "MEA": validatingModel(),
+    "MAE": validatingModel(),
     "python": sys.version.replace('\n', ''),
     "Versao sklearn": sklearn.__version__,      
     "Model Name": type(model).__name__,
