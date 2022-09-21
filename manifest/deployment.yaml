@@ -35,4 +35,4 @@ spec:
         resources:
           requests:
             cpu: 200m
-            memory: 512m
+            memory: 512M
