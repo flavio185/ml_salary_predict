@@ -8,7 +8,7 @@ output/metadata.json
 ex.:
 
 Go to Jenkins:
-http://20.121.252.249:8080/job/azureStorage/19/console
+http://20.121.252.249:8080/job/ModelTrainAndSave/build?delay=0sec
 
 Run ModelTrainAndSave Job passing this project git.
 
