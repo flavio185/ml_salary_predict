@@ -1,6 +1,6 @@
 fastapi
 uvicorn
 joblib
-sklearn
+scikit-learn
 numpy
 azure-core
