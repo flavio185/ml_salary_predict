@@ -7,9 +7,13 @@ from . import predict
 
 app = FastAPI()
 
+model_version = {}
+with open("model_version.py") as fp:
+    exec(fp.read(), model_version)
+
 @app.get('/api')
 async def index():
-  return {"text":"Api is alive"}
+  return {"text":"Api is alive", "model_version":model_version}
 
 
 @app.post("/api")
