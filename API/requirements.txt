@@ -1,5 +1,6 @@
 scikit-learn==1.0.2
 fastapi
+prometheus-fastapi-instrumentator
 uvicorn
 joblib
 numpy
