@@ -1,5 +1,6 @@
 import uvicorn
 from fastapi import FastAPI, Request
+from prometheus_fastapi_instrumentator import Instrumentator
 
 from . import predict 
 
@@ -32,5 +33,9 @@ async def api(info : Request):
   print(output)
   return output[0]
 
+@app.on_event("startup")
+async def startup():
+    Instrumentator().instrument(app).expose(app)
+    
 if __name__ == '__main__':
   uvicorn.run(app,host="127.0.0.1",port=8000)
