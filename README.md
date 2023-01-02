@@ -33,3 +33,15 @@ API should have dockerize the model and make ready for deployment.
 
 API will download output folder from azure ML. Version of model can be passed as parameter. If no parameter, last model saved will be downloaded.
 Output folder will be available at: /code/app/output/
+
+curl --location --request POST 'http://34.72.27.5/api' \
+--header 'Content-Type: application/json' \
+--data-raw '{
+    "experience_level": "Senior",
+    "employment_type": "Full-time",
+    "company_size": "Small",
+    "work_year": "2020",
+    "job_title": "Data Scientist",
+    "remote_ratio": "Remote",
+    "employee_residence": "DE"
+}'
