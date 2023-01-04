@@ -13,7 +13,7 @@ with open("/code/app/model_version.py") as file:
   model_version=file.read()
   model_version=model_version.split('=')[1].strip()
 
-@app.get('/helth')
+@app.get('/health')
 async def index():
   return {"text":"Api is alive", "model_version":model_version}
 
