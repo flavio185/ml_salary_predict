@@ -15,7 +15,7 @@ with open("/code/app/model_version.py") as file:
 
 @app.get('/health')
 async def index():
-  return {"text":"Api is alive", "model_version":model_version}
+  return {"text":"Api is alive", "modeel_version":model_version}
 
 
 @app.post("/api")
