@@ -39,13 +39,13 @@ df["work_year"] = df["work_year"].astype("str")
 # Renaming columns entries for clarity
 
 # Experience Level
-df["experience_level"] = df["experience_level"].map({"SE":"Senior", "MI":"Junior", "EN":"Entry", "EX":"Expert"})
+#df["experience_level"] = df["experience_level"].map({"SE":"Senior", "MI":"Junior", "EN":"Entry", "EX":"Expert"})
 # # Employment Type
-df["employment_type"] = df["employment_type"].map({"FT":"Full-time", "PT":"Part-time", "CT":"Contract", "FL":"Freelance"})
+#df["employment_type"] = df["employment_type"].map({"FT":"Full-time", "PT":"Part-time", "CT":"Contract", "FL":"Freelance"})
 # # Remote Ratio
 df["remote_ratio"] = df["remote_ratio"].map({0:"Onsite", 50:"Hybrid", 100:"Remote"})
 # Company Size
-df["company_size"] = df["company_size"].map({"S":"Small", "M":"Medium", "L":"Large"})
+#df["company_size"] = df["company_size"].map({"S":"Small", "M":"Medium", "L":"Large"})
 
 ###PRE PROCESSING
 
