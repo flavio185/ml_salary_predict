@@ -83,7 +83,7 @@ svr = SVR()
 
 model = SVR(C = 1, gamma = 1, kernel = "sigmoid")
 model.fit(X_train, y_train)
-preds = model.predict(X_valid[:1])
+preds = model.predict(X_valid)
 print("Mean Absolute Error: ", mean_absolute_error(preds, y_valid))
 print(preds)
 dump(model, 'output/model.joblib') # save the model
