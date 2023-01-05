@@ -9,6 +9,7 @@ from joblib import dump
 from sklearn.svm import SVR
 from sklearn.model_selection import train_test_split
 from sklearn.preprocessing import OneHotEncoder
+from sklearn.metrics import mean_absolute_error
 
 # For exporting model information.
 import json
@@ -83,6 +84,7 @@ svr = SVR()
 model = SVR(C = 1, gamma = 1, kernel = "sigmoid")
 model.fit(X_train, y_train)
 preds = model.predict(X_valid[:1])
+print("Mean Absolute Error: ", mean_absolute_error(preds, y_valid))
 print(preds)
 dump(model, 'output/model.joblib') # save the model
 dump(enc, 'output/encoder.joblib') # save the encoder
