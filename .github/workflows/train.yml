@@ -1,0 +1,23 @@
+name: GitHub Actions Demo
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  train-model:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Set up Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: 3.8
+
+      - name: Install dependencies
+        run: pip install -r Train/requirements.txt
+
+      - name: Run training script
+        run: python Train/train_model.py
