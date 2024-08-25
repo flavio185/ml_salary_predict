@@ -103,6 +103,7 @@ def generateMetrics():
   return json.dumps( metadata )
 
 metrics = generateMetrics()
+print(f"metrics={metrics}")
 # Writing to sample.json
 with open("output/metadata.json", "w") as outfile:
     outfile.write(metrics)
